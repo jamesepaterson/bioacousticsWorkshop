@@ -47,3 +47,10 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# old files
+old/
+
+# rmd and htmls
+*.html
+*.rmd
