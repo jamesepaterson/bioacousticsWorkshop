@@ -30,10 +30,10 @@ birdnet_model <- birdnet_model_tflite("v2.4")
 audio_path_marshSounds2 <- file.path(getwd(), "/marshSounds_2025-06-02_1148.wav")
 
 # Predict species in the audio file
-predictions_marshSounds2 <- predict_species_from_audio_file(birdnet_model, 
-                                                            audio_path_marshSounds2,
-                                                            min_confidence = 0.1,
-                                                            chunk_overlap_s = 2.5,
+predictions_marshSounds2 <- predict_species_from_audio_file(birdnet_model, # initialized BirdNet model
+                                                            audio_path_marshSounds2, # path to audio file
+                                                            min_confidence = 0.1, # the minimum BirdNet confidence to report
+                                                            chunk_overlap_s = 2.5, # BirdNet works on 3s chunks, here I use 2.5s overlap between 3s chunks 
                                                             keep_empty = FALSE)
 
 # Print predictions table
